@@ -1,0 +1,21 @@
+<nav class="navbaro">
+<%= link_to "Back to list", restaurants_path %>
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+</nav>
+<div class="test-block">
+<div class="retest-block">
+<h3>Name :</h3>
+<%= @restaurant.name %>
+
+<h3>Address :</h3>
+<%= @restaurant.address %>
+<br>
+<br>
+
+<h3>Review for <%= @restaurant.name %></h3>
+<% @restaurant.reviews.each do |review| %>
+  <%= review.rating %>
+  <%= review.content %>
+<% end %>
+</div>
+</div>
